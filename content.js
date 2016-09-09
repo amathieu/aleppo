@@ -1,6 +1,6 @@
 var elements = document.getElementsByTagName('*');
 
-var BLACKLISTED = ['donald', 'trump', 'donald j. trump', 'donaldjtrump' 'donald john trump', 'racism', 'racist', 'sexist', 'sexism'];
+var BLACKLISTED = ['donald', 'trump', 'drumpf', 'donald j. trump', 'donaldjtrump' 'donald john trump', 'racism', 'racist', 'sexist', 'sexism', 'military', 'businessman'];
 
     var imgs = document.getElementsByTagName('img');
     ///thumbnail imgs;
@@ -15,7 +15,7 @@ var BLACKLISTED = ['donald', 'trump', 'donald j. trump', 'donaldjtrump' 'donald 
         // 'https://imgur.com/tMwO5Un',
         // 'https://imgur.com/yTxQZ23'
 
-    for(var i=0; i<imgs.length; i++) {
+    for(var i = 0; i < imgs.length; i++) {
         if (imgs[i].getAttribute('alt').match(/(?:^|\W)trump(?:$|\W)/gi) !== null || imgs[i].src.match(/(?:|\W)trump(?:|\W)/gi) !== null) {
             
             var parent = imgs[i].parentNode,

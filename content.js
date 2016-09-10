@@ -32,7 +32,7 @@
             src = element.src;
 
         if (alt && alt.match(searchTerms)) {
-                return replaceImage(element);
+            return replaceImage(element);
         }
 
         if (src.match(searchTerms)) {

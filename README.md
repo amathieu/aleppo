@@ -11,6 +11,8 @@ Technologies:
 - JavaScript
 - CSS
 
+Images of puppies are copyright & attribution free images from pixabay.com
+
 Bugs:
 
 - Does not block video previews

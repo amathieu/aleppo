@@ -6,6 +6,17 @@ Example images:
 
 ![Trump Dump Demo Image](/assets/trump-dump-example.png)
 
+How to use:
+
+Only in developer mode; for Chrome:
+
+    1. Type 'chrome://extensions' into url searchbar in Chrome browser and press Enter.
+    2. Check box at top of window to enable 'Developer mode'.
+    3. Press 'Load Unpacked Extension' button to set path to folder with extensions files in it. 
+    4. Check 'Enable' box when Trump Dump appears in the list of extensions.
+    5. Test it out by searching 'Donald Trump' w/your favorite search engine.
+    6. Feel your tensions melt away in the face of puppies.
+
 Technologies:
 
 - JavaScript

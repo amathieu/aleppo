@@ -75,6 +75,6 @@
     for (var i = 0; i < elements.length; i++) {
         var element = elements[i];
         
-        element.tagName === 'IMG' ? replaceImage(element) : replaceText(element);
+        element.tagName === 'IMG' ? checkImage(element) : checkText(element);
     }
 })();

@@ -2,10 +2,20 @@ A Chrome extension that replaces text mentions and images of Donald Trump.
 
 If you're experiencing Trump fatigue pre-November presidential election, install this extension to replace mentions and images of Trump in your browser with something that everyone finds soothing: puppies. 
 
+Example images:
+
+![Trump Dump Demo Image](/assets/trump-dump-example.png)
+
 Technologies:
 
 - JavaScript
 - CSS
+
+Bugs:
+
+- Does not block video previews
+- Does not block all images
+- Sites that have a no overwrite rule may may not have text or images blocked
 
 TODO:
 

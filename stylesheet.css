@@ -5,4 +5,9 @@
 .puppyImg {
     position: relative;
     background-color:;
+    height, width: auto;
+}
+
+.replaced {
+    background-color: red;
 }

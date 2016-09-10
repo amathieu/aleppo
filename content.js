@@ -1,53 +1,62 @@
-var elements = document.getElementsByTagName('*');
+(function () {
+    'use strict';
 
-var BLACKLISTED = ['donald', 'trump', 'drumpf', 'donald j. trump', 'donaldjtrump' 'donald john trump', 'racism', 'racist', 'sexist', 'sexism', 'military', 'businessman'];
+    var elements = document.getElementsByTagName('*'),
+        BLACKLISTED = [
+            'donald', 
+            'trump',
+            'jtrump',
+            'john', 
+            'drumpf', 
+            'donaldjtrump', 
+            ];
 
-    var imgs = document.getElementsByTagName('img');
-    ///thumbnail imgs;
-    var replacementImgs =[
-        'https://i.imgur.com/fhNroF8.jpg',
-        'https://i.imgur.com/ZGJHIn2.jpg',
-        'https://i.imgur.com/t3vsolX.jpg'
-        ];
+    function replaceImage(element) {
+        //thumbnail imgs;
+        var replacementImgs =[
+            'https://i.imgur.com/fhNroF8.jpg',
+            'https://i.imgur.com/ZGJHIn2.jpg',
+            'https://i.imgur.com/t3vsolX.jpg'
+            ];
 
-        //Full size imgs
-        // 'https://imgur.com/0mOlnU9',
-        // 'https://imgur.com/tMwO5Un',
-        // 'https://imgur.com/yTxQZ23'
+            if (element.getAttribute('src') === null) {
+                console.log(element);
+            }
+        // try {
+        //     if (element.getAttribute('alt').match(/(?:^|\W)trump(?:$|\W)/gi) !== null || element.src.match(/(?:|\W)trump(?:|\W)/gi) !== null){
+        //         var parent = element.parentNode,
+        //             wrapper = document.createElement('div'), 
+        //             newImg = document.createElement('img'),
+        //             newSrc = replacementImgs[Math.floor(Math.random() * (2 - 0 + 1)) + 0];
 
-    for(var i = 0; i < imgs.length; i++) {
-        if (imgs[i].getAttribute('alt').match(/(?:^|\W)trump(?:$|\W)/gi) !== null || imgs[i].src.match(/(?:|\W)trump(?:|\W)/gi) !== null) {
-            
-            var parent = imgs[i].parentNode,
-                wrapper = document.createElement('div'), 
-                newImg = document.createElement('img'),
-                newSrc = replacementImgs[Math.floor(Math.random() * (2 - 0 + 1)) + 0];
+        //         newImg.className = "puppyImg";
+        //         newImg.setAttribute('src', newSrc);
 
-            newImg.className = "puppyImg";
-            newImg.setAttribute('width', 'auto');
-            newImg.setAttribute('height', 'auto');
-            newImg.setAttribute('src', newSrc);
-            newImg.style.backgroundColor="red";
-
-            wrapper.className = "puppyContainer";
-            parent.replaceChild(wrapper, imgs[i]);
-            wrapper.appendChild(imgs[i]);
-            wrapper.insertBefore(newImg, wrapper.firstChild);
-        }
+        //         wrapper.className = "puppyContainer";
+        //         parent.replaceChild(wrapper, element);
+        //         wrapper.appendChild(element);
+        //         wrapper.insertBefore(newImg, wrapper.firstChild);
+        //     }
+        // } catch (err) {
+        //     console.log(err);
+        // }
     }
 
-for (var i = 0; i < elements.length; i++) {
-    var element = elements[i];
-
-    for (var j = 0; j < element.childNodes.length; j++) {
-        var node = element.childNodes[j];
-
-        if (node.nodeType === 3) {
-            var text = node.nodeValue;
-            var replacedText = text.replace(/(?:^|\W)trump(?:$|\W)/gi, ' puppies ' );
-            if (replacedText !== text) {
-                element.replaceChild(document.createTextNode(replacedText), node);
+    function replaceText(element) {
+        for (var j = 0; j < element.childNodes.length; j++) {
+                var node = element.childNodes[j];
+            if (node.nodeType === 3) {
+                var text = node.nodeValue,
+                    newText = text.replace(new RegExp('(?:)'+(BLACKLISTED).join("|")+'(?:)', 'ig'), ' puppies ' );
+                    
+                element.replaceChild(document.createTextNode(newText), node);
             }
         }
     }
-}
+
+    //find and replace
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        element.tagName === 'IMG' ? replaceImage(element) : replaceText(element);
+    }
+})();

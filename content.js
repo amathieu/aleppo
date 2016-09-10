@@ -26,7 +26,7 @@
     }
 
 //Images
-    function isBannedImage (element) {
+    function checkImage (element) {
         var searchTerms = new RegExp('(?:)' + BLACKLISTED.join("|") + '(?:)', 'ig'),
             alt = element.getAttribute('alt'),
             src = element.src;
@@ -61,7 +61,7 @@
         return element.replaceChild(document.createTextNode(newText), node);
     }
 
-    function isBannedText (element) {
+    function checkText (element) {
         for (var j = 0; j < element.childNodes.length; j++) {
             var node = element.childNodes[j];
             

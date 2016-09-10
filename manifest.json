@@ -1,7 +1,7 @@
 {
 "manifest_version": 2,
-    "name": "[your extension name here]",
-    "description": "[your extension description here]",
+    "name": "Trump Dump",
+    "description": "Relieve Trump fatigue online by replacing text/images with puppies",
     "version": "1.0",
     "content_scripts": [
         {

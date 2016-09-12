@@ -15,20 +15,20 @@
                         'https://i.imgur.com/fhNroF8.jpg',
                         'https://i.imgur.com/ZGJHIn2.jpg',
                         'https://i.imgur.com/t3vsolX.jpg'
-                    ];
+                    ],
+        searchTerms = new RegExp('(?:)' + BLACKLISTED.join("|") + '(?:)', 'ig');
 
    function newSrc () {
         return puppyImgs[randomPick()];
     }
 
     function randomPick () {
-        return Math.floor(Math.random() * (2 - 0 + 1)) + 0;
+        return Math.floor(Math.random() * puppyImgs.length);
     }
 
 //Images
     function checkImage (element) {
-        var searchTerms = new RegExp('(?:)' + BLACKLISTED.join("|") + '(?:)', 'ig'),
-            alt = element.getAttribute('alt'),
+            var alt = element.getAttribute('alt'),
             src = element.src;
 
         if (alt && alt.match(searchTerms)) {
@@ -56,7 +56,7 @@
 //Text
     function replaceText (node) {
         var text = node.nodeValue,
-            newText = text.replace(new RegExp('(?:)'+BLACKLISTED.join("|")+'(?:)', 'ig'), ' puppies ' );
+            newText = text.replace(searchTerms, ' puppies ' );
             
         return element.replaceChild(document.createTextNode(newText), node);
     }

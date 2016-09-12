@@ -9,7 +9,8 @@
                         'jtrump',
                         'john', 
                         'drumpf', 
-                        'donaldjtrump' 
+                        'donaldjtrump',
+                        'Donald'
                       ],
         puppyImgs = [
                         'https://i.imgur.com/fhNroF8.jpg',
@@ -29,13 +30,9 @@
 //Images
     function checkImage (element) {
             var alt = element.getAttribute('alt'),
-            src = element.src;
+                src = element.src;
 
-        if (alt && alt.match(searchTerms)) {
-            return replaceImage(element);
-        }
-
-        if (src.match(searchTerms)) {
+        if (alt && alt.match(searchTerms) || src.match(searchTerms)) {
             return replaceImage(element);
         }
     }

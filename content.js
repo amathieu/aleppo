@@ -4,13 +4,8 @@
 
     var elements = document.getElementsByTagName('*'),
         BLACKLISTED = [
-                        'donald', 
-                        'trump',
-                        'jtrump',
-                        'john', 
-                        'drumpf', 
-                        'donaldjtrump',
-                        'Donald'
+                        'aleppo', 
+                        'alepo',
                       ],
         puppyImgs = [
                         'https://i.imgur.com/fhNroF8.jpg',

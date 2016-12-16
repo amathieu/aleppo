@@ -4,20 +4,20 @@
 
     var elements = document.getElementsByTagName('*'),
         BLACKLISTED = [
-                        ' aleppo ', 
-                        ' Alepo ',
+                        'aleppo ', 
+                        'syria',
                       ],
-        denialImgs = [
+        puppyImgs = [
                         'https://usercontent1.hubstatic.com/3539680.jpg',
                     ],
         searchTerms = new RegExp('(?:)' + BLACKLISTED.join("|") + '(?:)', 'ig');
 
    function newSrc () {
-        return denialImgs[randomPick()];
+        return puppyImgs[randomPick()];
     }
 
     function randomPick () {
-        return Math.floor(Math.random() * denialImgs.length);
+        return Math.floor(Math.random() * puppyImgs.length);
     }
 
 //Images
@@ -35,9 +35,9 @@
             wrapper = document.createElement('div'), 
             newImg = document.createElement('img');
         //create new puppy with new url
-        newImg.className = "denialImg";
+        newImg.className = "puppyImg";
         newImg.setAttribute('src', newSrc());
-        wrapper.className = "denialContainer";
+        wrapper.className = "puppyContainer";
         //insert puppy img into DOM
         parent.replaceChild(wrapper, element);
         wrapper.insertBefore(newImg, wrapper.firstChild);

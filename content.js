@@ -4,8 +4,8 @@
 
     var elements = document.getElementsByTagName('*'),
         BLACKLISTED = [
-                        '  Denial  ', 
-                        '  Denial  ',
+                        ' aleppo ', 
+                        ' Alepo ',
                       ],
         denialImgs = [
                         'https://usercontent1.hubstatic.com/3539680.jpg',

@@ -1,7 +1,7 @@
 {
 "manifest_version": 2,
-    "name": "Trump Dump",
-    "description": "Relieve Trump fatigue online by replacing text/images with puppies",
+    "name": "Aleppo Denial",
+    "description": "Sarcastically allow people the denial they already practice about Aleppo happenings",
     "version": "1.0",
     "content_scripts": [
         {

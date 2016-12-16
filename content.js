@@ -48,7 +48,7 @@
 //Text
     function replaceText (node) {
         var text = node.nodeValue,
-            newText = text.replace(searchTerms, ' puppies ' );
+            newText = text.replace(searchTerms, ' Denial ' );
         //FIXME: regex seems to skip first-letter capitalized matches
         return element.replaceChild(document.createTextNode(newText), node);
     }

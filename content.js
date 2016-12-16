@@ -4,13 +4,11 @@
 
     var elements = document.getElementsByTagName('*'),
         BLACKLISTED = [
-                        ' Denial ', 
-                        ' Denial ',
+                        ' aleppo ', 
+                        ' aleppo ',
                       ],
         denialImgs = [
-                        'https://i.imgur.com/fhNroF8.jpg',
-                        'https://i.imgur.com/ZGJHIn2.jpg',
-                        'https://i.imgur.com/t3vsolX.jpg'
+                        'http://i.imgur.com/TjQ1Ch2.gif',
                     ],
         searchTerms = new RegExp('(?:)' + BLACKLISTED.join("|") + '(?:)', 'ig');
 

@@ -4,10 +4,10 @@
 
     var elements = document.getElementsByTagName('*'),
         BLACKLISTED = [
-                        'aleppo', 
-                        'alepo',
+                        ' Denial ', 
+                        ' Denial ',
                       ],
-        puppyImgs = [
+        denialImgs = [
                         'https://i.imgur.com/fhNroF8.jpg',
                         'https://i.imgur.com/ZGJHIn2.jpg',
                         'https://i.imgur.com/t3vsolX.jpg'
@@ -15,11 +15,11 @@
         searchTerms = new RegExp('(?:)' + BLACKLISTED.join("|") + '(?:)', 'ig');
 
    function newSrc () {
-        return puppyImgs[randomPick()];
+        return denialImgs[randomPick()];
     }
 
     function randomPick () {
-        return Math.floor(Math.random() * puppyImgs.length);
+        return Math.floor(Math.random() * denialImgs.length);
     }
 
 //Images
@@ -37,9 +37,9 @@
             wrapper = document.createElement('div'), 
             newImg = document.createElement('img');
         //create new puppy with new url
-        newImg.className = "puppyImg";
+        newImg.className = "denialImg";
         newImg.setAttribute('src', newSrc());
-        wrapper.className = "puppyContainer";
+        wrapper.className = "denialContainer";
         //insert puppy img into DOM
         parent.replaceChild(wrapper, element);
         wrapper.insertBefore(newImg, wrapper.firstChild);

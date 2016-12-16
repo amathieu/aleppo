@@ -4,8 +4,10 @@
 
     var elements = document.getElementsByTagName('*'),
         BLACKLISTED = [
-                        'aleppo ', 
-                        'syria',
+                        ' aleppo ', 
+                        ' alepo ',
+                        ' Aleppo ', 
+                        ' Syria ',
                       ],
         puppyImgs = [
                         'https://usercontent1.hubstatic.com/3539680.jpg',
